@@ -1,0 +1,33 @@
+protocol vs subclass
+
+protocol: A protocol, by contrast, is used to declare methods and properties that are independent of any specific class.
+syntax:
+ *    @protocol ProtocolName
+// list of methods and properties
+@end
+
+* Protocols can include declarations for both instance methods and class methods, as well as properties
+
+* Protocols Inherit from Other Protocols
+In the same way that an Objective-C class can inherit from a superclass, you can also specify that one protocol conforms to another.
+
+* Protocols are also useful in situations where the class of an object isn’t known, or needs to stay hidden.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+subclass:
+
+Subclassing is just a subclass of another class and it inherits behavior and members of its parent class.
+
+Classes need not only be derived from a root class. For example, a subclass can also inherit from another subclass with the potential to create large and complex class hierarchies.
+In Objective-C a subclass can only be derived from a single direct parent class. This is a concept referred to as single inheritance.
+
+syntax:
+    @interface subclassname : classname {
+// instance variables that subclassname has but classname lacks go here
+}
+// methods that subclassname has and classname may or may not go here. If both have it, subclassname's implementation override's classname's so long as an instance of subclassname is references.
+@end
+
+* By deriving classes we create what is often referred to as a class hierarchy.
+ The class at the top of the hierarchy is known as the base class or root class and the derived classes as subclasses or child classes.
+ Any number of subclasses may be derived from a class. The class from which a subclass is derived is called the parent class.
