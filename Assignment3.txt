@@ -1,0 +1,80 @@
+1.DVM instructions in the form of
+Instruction name:
+Syntax:
+Example:
+1)
+Instruction name: Moves the object reference from vB to vA.
+Syntax          : move-object vA, vB
+Example         : move-object v1, v8
+                   Moves the object reference in v8 to v1..  
+
+2)
+Instruction name:Generates a new array of type_id type and vB element size and puts the reference to the array into vA.
+syntax          :new-array vA, vB, type@CCCCA
+Example         :new-array v2, v1, char[] // type@0025
+                  Generates a new array of type@0025 type and v1 size and puts the reference to the new array into v2.
+
+3)
+Instruction name:Checks whether vB is instance of a class identified by type_id. Sets vA non-zero if it is, 0 otherwise
+syntax          :instance-of vA, vB, type@CCCC
+Example         : instance-of v0, v4, Test3 // type@0001
+                  Checks whether the object reference in v4 is an instance of type@0001 (entry #1 in the type id table). Sets v0 to non-zero if v4 is instance of Test3, 0 otherwise
+				 
+4)
+Instruction name:Puts the integer constant into vAA
+syntax          :const vAA, #+BBBBBBBB
+Example         : const v0, #12345678 // #00BC614E
+                  Moves literal 12345678 into v0.
+				 
+5)
+Instruction name:Implements a switch statement with sparse case table
+syntax          :sparse-switch vAA, +BBBBBBBB (with supplemental data as specified below in "sparse-switch-payload Format")
+Example         :sparse-switch v2, 000c // +000c
+                Execute a sparse switch according to the switch argument in v2. The position of the lookup table is at current instruction+0CH words. The table looks like the following.
+                0002 // Table type: sparse switch table
+                0300 // number of elements
+                9cff ffff // first case: -100
+                fa00 0000 // second case constant: 250
+                e803 0000 // third case constant: 1000
+                0500 0000 // offset for the first case constant: +5
+                0700 0000 // offset for the second case constant: +7
+                0900 0000 // offset for the third case constant: +9
+				 
+				 
+				 
+2.Differentiate between mobile and cloud computing
+
+mobile computing:
+1.Mobile computing is human–computer interaction by which a computer is expected to be transported during normal usage.
+2.Mobile computing doesnot require any network connection.
+3.Focused on mobile users.
+4.Uses portable devices for computing.
+5. Low processing power, transmission power.
+
+
+cloud computing:
+1.Cloud computing is a type of computing that relies on sharing computing resources rather than having local servers or personal devices to handle applications.
+Cloud computing lets you use files and applications over the Internet
+2)The goal of cloud computing is to apply traditional supercomputing, or high-performance computing power, normally used by military and research facilities, to perform tens of trillions of computations per second, 
+in consumer-oriented applications such as financial portfolios, to deliver personalized information.
+3)Cloud services include the delivery of software, infrastructure, and storage over the Internet based on user demand
+4)Foucused on business maintainance.
+5)High processing power,tranmission power.
+
+
+3. Give an example of an application simulating an environment of  context aware computing and justify.
+
+  Example:
+  Shifu: To Do & Task Manager - 
+  ------------------------------
+Great example of Context Aware App : Robert Scoble
+In Public Beta
+Shifu is your smart friend who lives in your smartphone and observes when and how you use your phone. It knows what are the important things that need your attention and when is the right time to show them to you. It’s the Sidekick you always wanted .
+Its is a smart To Do & Task Management app designed from the ground up keeping your smartphone in mind. We believe that existing time management tools are inefficient because they require you to adjust your life to the tool rather than the tool fitting in to your life. Shifu is our attempt to change this.
+The traditional approach to activity management requires you to define tasks like this:
+Call Sarah to wish her for her birthday at 2:30 PM on the 4th of March
+Call John at 12:30 PM tomorrow to ask for the money he owes me
+Buy new t-shirts on the 24th of March.
+Remind me to upload pictures from my weekend Party on Facebook .
+
+
